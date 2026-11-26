@@ -8,7 +8,7 @@ import { hospital } from "@/data/hospital";
 
 const enlaces = [
   ["Inicio", "/"], ["El hospital", "/#hospital"], ["Especialidades", "/#especialidades"],
-  ["Pacientes", "/#pacientes"], ["Noticias", "/noticias/"],
+  ["Pacientes", "/#pacientes"], ["Noticias", "/noticias/"]
 ];
 
 export function Cabecera() {
@@ -33,6 +33,12 @@ export function Cabecera() {
           {enlaces.map(([texto, href]) => <Link key={href} href={href} onClick={() => setAbierto(false)} aria-current={(href === "/" && pathname === "/") || (href === "/noticias/" && pathname.startsWith("/noticias")) ? "page" : undefined}>{texto}</Link>)}
           <Link href="/#contacto" className="nav-contacto" onClick={() => setAbierto(false)}>Contacto <Icono nombre="external" /></Link>
         </nav>
+        {/*
+         * logo Inicio de sesion
+         */}
+        <Link href={"/login"} className="nav-cantacto">
+          Iniciar Sesión
+        </Link>
       </div>
     </header>
   </>;
